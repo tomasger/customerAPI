@@ -50,7 +50,7 @@ func TestGetUsers(t *testing.T) {
 			t.Fatalf("no authentication request failed, expected: %d, got: %d", expectedCode, resp.StatusCode)
 		}
 	}
-	t.Run("Successful retrieve users", successfulGet)
+	t.Run("Successful retrieve customers", successfulGet)
 	t.Run("Unauthorized when no auth", failureNoAuth)
 }
 
@@ -85,7 +85,7 @@ func TestGetUser(t *testing.T) {
 		}
 
 		if !reflect.DeepEqual(expected, customer) {
-			t.Fatalf("users returned unexpected data, expected: %v, got: %v", expected, customer)
+			t.Fatalf("customers endpoint returned unexpected data, expected: %v, got: %v", expected, customer)
 		}
 	}
 	failureNoAuth := func(t *testing.T) {

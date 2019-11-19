@@ -16,7 +16,7 @@ const (
 	TestDataset  = TestDataPath + "test_ds.json"
 )
 
-var TestAPIUrl = "http://127.0.0.1:" + strconv.Itoa(TestingPort) + "/v1/users"
+var TestAPIUrl = "http://127.0.0.1:" + strconv.Itoa(TestingPort) + "/v1/customers"
 
 func TestMain(m *testing.M) {
 	db := storage.NewMapStorage()

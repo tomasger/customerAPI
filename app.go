@@ -31,9 +31,9 @@ func (a *App) Run(port int) {
 }
 
 func (a *App) setRouters() {
-	a.Router.HandleFunc("/v1/users", a.handleRequest(handlers.PostCustomer)).Methods("POST")
-	a.Router.HandleFunc("/v1/users", a.handleRequest(handlers.GetCustomers)).Methods("GET")
-	a.Router.HandleFunc("/v1/users/{id:[0-9]+}", a.handleRequest(handlers.GetCustomer)).Methods("GET")
+	a.Router.HandleFunc("/v1/customers", a.handleRequest(handlers.PostCustomer)).Methods("POST")
+	a.Router.HandleFunc("/v1/customers", a.handleRequest(handlers.GetCustomers)).Methods("GET")
+	a.Router.HandleFunc("/v1/customers/{id:[0-9]+}", a.handleRequest(handlers.GetCustomer)).Methods("GET")
 }
 
 func (a *App) handleRequest(handler func(storage.Database, http.ResponseWriter, *http.Request)) func(http.ResponseWriter, *http.Request) {
