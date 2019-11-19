@@ -1,0 +1,23 @@
+[
+  {
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "j.s@gmail.com",
+    "terms_accepted": true
+  },
+  {
+    "first_name": "Kevin",
+    "last_name": "Hart",
+    "email": "funny@aol.com",
+    "company": "SNL",
+    "terms_accepted": false
+  },
+  {
+    "first_name": "Tim",
+    "last_name": "Cook",
+    "email": "app@le.com",
+    "company": "Apple Inc.",
+    "post_code": "W11 001",
+    "terms_accepted": false
+  }
+]
