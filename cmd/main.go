@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	// TODO get env for DB type, port
 	db := storage.NewMapStorage()
 	app := customerAPI.NewApp(db)
 	app.Init()

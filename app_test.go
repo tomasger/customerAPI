@@ -178,20 +178,20 @@ func TestPostUser(t *testing.T) {
 				TermsAccepted: boolPointer(true),
 			},
 			{
-				LastName:"NoFirstName",
-				Email:"still@real.com",
-				TermsAccepted:boolPointer(true),
+				LastName:      "NoFirstName",
+				Email:         "still@real.com",
+				TermsAccepted: boolPointer(true),
 			},
 			{
-				FirstName:"Exists",
-				LastName:"As well",
-				Email:"fake",
-				TermsAccepted:boolPointer(true),
+				FirstName:     "Exists",
+				LastName:      "As well",
+				Email:         "fake",
+				TermsAccepted: boolPointer(true),
 			},
 			{
-				FirstName:"Didn't read",
-				LastName:"Terms and Conditions",
-				Email:"valid@gmail.com",
+				FirstName: "Didn't read",
+				LastName:  "Terms and Conditions",
+				Email:     "valid@gmail.com",
 			},
 		}
 		for _, data := range testData {

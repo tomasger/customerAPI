@@ -36,6 +36,7 @@ func (a *App) setRouters() {
 	a.Router.HandleFunc("/v1/customers/{id:[0-9]+}", a.handleRequest(handlers.GetCustomer)).Methods("GET")
 }
 
+// handleRequest is a wrapper for handlers to provide them with access to Database interface
 func (a *App) handleRequest(handler func(storage.Database, http.ResponseWriter, *http.Request)) func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		handler(a.DB, w, r)

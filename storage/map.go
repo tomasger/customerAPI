@@ -17,12 +17,14 @@ func NewMapStorage() *MapStorage {
 	}
 }
 
+// CreateCustomer adds an entry to customer database
 func (m *MapStorage) CreateCustomer(data *models.Customer) error {
 	m.db[m.counter] = data
 	m.counter++
 	return nil
 }
 
+// GetCustomer retrieves a single customer by its ID
 func (m *MapStorage) GetCustomer(id int64) (*models.Customer, error) {
 	if item, exists := m.db[id]; exists {
 		return item, nil
@@ -30,6 +32,7 @@ func (m *MapStorage) GetCustomer(id int64) (*models.Customer, error) {
 	return nil, errors.New("customer not found")
 }
 
+// GetCustomers retrieves an array of all customers in the database
 func (m *MapStorage) GetCustomers() ([]*models.Customer, error) {
 	customerCount := len(m.db)
 	if customerCount == 0 {

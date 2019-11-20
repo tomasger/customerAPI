@@ -11,6 +11,7 @@ import (
 	"time"
 )
 
+// PostCustomer is an API endpoint handler for receiving customer data
 var PostCustomer = func(db storage.Database, w http.ResponseWriter, r *http.Request) {
 	var customer *models.Customer
 	decoder := json.NewDecoder(r.Body)
@@ -37,6 +38,7 @@ var PostCustomer = func(db storage.Database, w http.ResponseWriter, r *http.Requ
 	w.WriteHeader(201)
 }
 
+// GetCustomer is an API endpoint handler for fetching a single customer
 var GetCustomer = func(db storage.Database, w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	// mux ensures to only accept integers as ID
@@ -56,6 +58,7 @@ var GetCustomer = func(db storage.Database, w http.ResponseWriter, r *http.Reque
 	}
 }
 
+// GetCustomers is an API endpoint handler for fetching all customers in persistent data storage
 var GetCustomers = func(db storage.Database, w http.ResponseWriter, r *http.Request) {
 	customers, err := db.GetCustomers()
 	if err != nil {
