@@ -7,7 +7,7 @@
 ### Features
 The API does not utilize a persistent data storage, but one can be easily implemented, it simply has to realize the `Database` interface.
 
-POST data is validated with simple filters.
+POST data is validated with simple filters. If the data is valid, customer data is added to a database and is assigned an integer value (starting from 1 and incrementing onwards).
 
 Basic Auth is implemented (currently hardcoded).
 
